@@ -74,116 +74,63 @@ export default function Experience() {
           </motion.h2>
         </div>
 
-        {/* Timeline */}
-        <div className="relative overflow-visible pl-1 sm:pl-2 md:pl-0">
-          {/* Vertical line */}
-          <div className="absolute left-[27px] sm:left-[29px] md:left-1/2 md:-translate-x-[1px] top-0 bottom-0 w-[2px]">
-            <motion.div
-              initial={{ scaleY: 0 }}
-              whileInView={{ scaleY: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2, ease }}
-              className="w-full h-full bg-gradient-to-b from-accent via-accent/30 to-transparent origin-top"
-            />
-          </div>
-
-          {/* Timeline items */}
-          <div className="space-y-12 sm:space-y-16">
-            {experience.map((item, i) => {
-              const Icon = iconMap[item.role] || Briefcase;
-              const isLeft = i % 2 === 0;
-
-              return (
-                <motion.div
-                  key={item.role}
-                  initial={{ opacity: 0, y: 40, rotateX: 8 }}
-                  whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.7, delay: 0.1 + i * 0.15, ease }}
-                  style={{ perspective: 900 }}
-                  className={`relative flex items-start gap-6 sm:gap-8 md:gap-0 overflow-visible ${
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-                >
-                  {/* Timeline dot */}
-                  <div className="absolute left-[18px] sm:left-[20px] md:left-1/2 md:-translate-x-1/2 z-10">
-                    <div className="w-[20px] h-[20px] rounded-full border-2 border-accent bg-background flex items-center justify-center">
-                      <div className="w-2 h-2 rounded-full bg-accent" />
+        {/* Internship Card */}
+        <div className="relative max-w-4xl mx-auto mt-12">
+          <TiltCard maxTilt={4} scale={1.01}>
+            <div className="glass-card rounded-2xl p-8 md:p-12 animated-border group relative overflow-hidden">
+              {/* Background accent */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+              
+              <div className="relative z-10">
+                {/* Period & Role */}
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                      <Briefcase className="w-6 h-6 text-accent" />
                     </div>
-                    {/* Pulse ring */}
-                    <div className="absolute inset-0 rounded-full border border-accent/30 animate-[pulse-ring_2s_ease-in-out_infinite]" />
-                  </div>
-
-                  {/* Card */}
-                  <div
-                    className={`ml-16 sm:ml-18 md:ml-0 md:w-[calc(50%-40px)] ${
-                      isLeft ? "md:pr-12" : "md:pl-12"
-                    }`}
-                  >
-                    <TiltCard maxTilt={6} scale={1.02}>
-                    <div className="glass-card rounded-xl p-6 md:p-8 animated-border group">
-                      {/* Period badge */}
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center">
-                          <Icon className="w-4 h-4 text-accent" />
-                        </div>
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-accent">
-                          {item.period}
-                        </span>
-                        {i === experience.length - 1 && (
-                          <span className="flex items-center gap-1.5 px-2 py-0.5 text-[9px] font-mono uppercase tracking-widest text-green-400 bg-green-400/10 border border-green-400/20 rounded-full ml-auto">
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                            Now
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Role + Company */}
-                      <h3 className="text-xl font-bold text-primary mb-1 group-hover:text-accent transition-colors duration-300">
-                        {item.role}
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-primary mb-1 group-hover:text-accent transition-colors duration-300">
+                        {experience[0].role}
                       </h3>
-                      <p className="text-sm font-mono text-secondary mb-4">
-                        {item.company}
+                      <p className="text-base font-mono text-secondary">
+                        {experience[0].company}
                       </p>
-
-                      {/* Description */}
-                      <p className="text-secondary text-sm leading-relaxed mb-4">
-                        {item.description}
-                      </p>
-
-                      {/* Tech tags */}
-                      {item.techStack && (
-                        <div className="flex flex-wrap gap-1.5">
-                          {item.techStack.map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-2 py-1 text-[9px] font-mono text-accent/60 bg-accent/[0.04] border border-accent/10 rounded cursor-default transition-all duration-200 hover:text-accent hover:bg-accent/10 hover:border-accent/40 hover:shadow-[0_0_8px_rgba(245,158,11,0.35)]"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      )}
                     </div>
-                    </TiltCard>
                   </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                  <div className="flex items-center gap-2 px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-green-400 bg-green-400/10 border border-green-400/20 rounded-full self-start md:self-auto">
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                    {experience[0].period}
+                  </div>
+                </div>
 
-          {/* Timeline end dot */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-            className="absolute left-[18px] sm:left-[20px] md:left-1/2 md:-translate-x-1/2 -bottom-4"
-          >
-            <div className="w-[20px] h-[20px] rounded-full bg-green-400/20 border border-green-400/30 flex items-center justify-center">
-              <div className="w-2 h-2 rounded-full bg-green-400/60 animate-pulse" />
+                {/* Description */}
+                <div className="space-y-4 mb-8">
+                  <p className="text-secondary text-base leading-relaxed">
+                    {experience[0].description}
+                  </p>
+                </div>
+
+                {/* Tech Stack */}
+                {experience[0].techStack && (
+                  <div>
+                    <h4 className="text-xs font-mono uppercase tracking-widest text-tertiary mb-3">
+                      Technologies Used
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {experience[0].techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1.5 text-xs font-mono text-accent/80 bg-accent/5 border border-accent/20 rounded-md cursor-default transition-all duration-300 hover:text-accent hover:bg-accent/10 hover:border-accent/40 hover:shadow-[0_0_12px_rgba(245,158,11,0.2)]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
-          </motion.div>
+          </TiltCard>
         </div>
 
         {/* Bottom text */}
