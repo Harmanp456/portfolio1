@@ -55,12 +55,12 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
-    role: "Software Engineering Intern",
+    role: "Frontend Developer Intern",
     company: "Trigunasoft (Remote)",
     period: "July 2025 – Present",
     description:
-      "Developing responsive UI components using Angular and TypeScript for AI-driven enterprise products. Integrating frontend interfaces with backend APIs, significantly improving UX and system responsiveness. Collaborating in an Agile team environment with daily stand-ups and modular code reviews.",
-    techStack: ["Angular", "TypeScript", "FastAPI", "REST APIs", "Agile", "CI/CD"],
+      "Developed 31+ components and 31 routed screens. Implemented JWT authentication securing 90%+ routes. Built multilingual support, real-time chat with SignalR, and admin dashboards. Leveraged Angular Signals across 100+ state points.",
+    techStack: ["Angular", "TypeScript", "SignalR", "JWT Auth", "Angular Signals"],
   },
   {
     role: "First Developer Projects",
@@ -83,13 +83,13 @@ export const experience: Experience[] = [
     company: "Chandigarh University, Mohali",
     period: "2024",
     description:
-      "Joined B.E. Computer Science specialising in AI & Machine Learning. Currently maintaining an 8.44 CGPA. Began exploring Python, C++, and core programming fundamentals while diving into Machine Learning concepts.",
+      "Joined B.E. Computer Science specialising in AI & Machine Learning. Currently maintaining an 8.35 CGPA. Began exploring Python, C++, and core programming fundamentals while diving into Machine Learning concepts.",
     techStack: ["C++", "Python", "Java", "AI & ML", "DBMS", "Mathematics"],
   },
 ];
 
 export const stats: Stat[] = [
-  { value: "8.44", label: "CGPA", suffix: "" },
+  { value: "8.35", label: "CGPA", suffix: "" },
   { value: String(projects.length), label: "Projects Built", suffix: "+" },
   { value: String(certifications.length), label: "Certifications", suffix: "+" },
   { value: "1", label: "Internship", suffix: "" },
