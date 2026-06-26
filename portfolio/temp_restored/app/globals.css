@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* APEX DARK PORTFOLIO
+   ═══════════════════════════════════════════ */
+
+@theme inline {
+  /* ── Background System ── */
+  --color-background: #030303;
+  --color-surface: #0a0a0f;
+  --color-surface-hover: #111118;
+  --color-surface-glass: #0a0a0f99;
+
+  /* ── Border ── */
+  --color-border: #1a1a2e;
+  --color-border-glow: #F59E0B30;
+
+  /* ── Typography ── */
+  --color-primary: #f0f0f5;
+  --color-secondary: #8a8a9a;
+  --color-tertiary: #7a7a90;
+
+  /* ── Accent — Vivid Amber ── */
+  --color-accent: #F59E0B;
+  --color-accent-hover: #FBBF24;
+  --color-accent-muted: #F59E0B15;
+  --color-accent-hot: #EF4444;
+
+  /* ── Fonts ── */
+  --font-sans: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+/* ═══════════════ KEYFRAMES ═══════════════ */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes revealText {
+51
+<truncated 13049 bytes>
+ 32px 56px rgba(0, 0, 0, 0.15);
+}
+
+/* Perspective container — wrap a group of 3D children */
+.scene-3d {
+  perspective: 1200px;
+  perspective-origin: 50% 40%;
+}
+
+/* ─── Reveal-from-depth entrance ─── */
+@keyframes revealDepth {
+  from {
+    opacity: 0;
+    transform: perspective(900px) rotateX(12deg) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(900px) rotateX(0deg) translateY(0);
+  }
+}
+
+.reveal-depth {
+  animation: revealDepth 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─── Floating 3D element base ─── */
+.float-3d {
+  animation: float3d 7s ease-in-out infinite;
+}
+
+@keyframes float3d {
+  0%, 100% { transform: translateY(0px)   rotateX(0deg)  rotateZ(0deg); }
+  33%       { transform: translateY(-10px) rotateX(3deg)  rotateZ(1deg); }
+  66%       { transform: translateY(5px)  rotateX(-2deg) rotateZ(-1deg); }
+}
+
+/* ─── Shimmer depth line — horizontal scan effect ─── */
+@keyframes depthScan {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(300%);  opacity: 0; }
+}
+
+.depth-scan::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(245,158,11,0.4), transparent);
+  animation: depthScan 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ─── Disable 3D tilt on touch to prevent stuck states ─── */
+@media (hover: none) {
+  .tilt-wrap {
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+
+  .tilt-glare { display: none; }
+}
