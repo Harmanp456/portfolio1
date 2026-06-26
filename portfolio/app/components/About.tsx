@@ -143,24 +143,26 @@ export default function About() {
               I&apos;m a B.E. CSE (AI &amp; ML) student at Chandigarh University, Mohali,
               maintaining an <span className="text-accent font-semibold">8.35 CGPA</span>.
               Currently working as a{" "}
-              <span className="text-accent font-semibold">Software Engineering Intern at Trigunasoft</span>,
-              developing responsive Angular &amp; TypeScript UI components for AI-driven enterprise products
-              and integrating frontend interfaces with FastAPI backends.
+              <span className="text-accent font-semibold">Frontend Developer Intern at Trigunasoft</span>,
+              where I&apos;ve developed over 31 routed screens and components. My work focuses on 
+              leveraging Angular Signals for state management, implementing secure JWT authentication, 
+              and building real-time features using SignalR.
             </p>
 
             <p className="text-secondary leading-[1.8] text-base">
-              I&apos;ve shipped real full-stack AI projects — a Pet Adoption Platform with
-              Groq AI chat support and Role-Based Access Control, and an AI-Powered Lost &amp; Found
-              Platform with ML matching algorithms and JWT authentication. I enjoy building
-              systems end-to-end and understanding every layer of the stack.
+              I love building full-stack AI platforms end-to-end. Recently, I shipped an 
+              <span className="text-accent font-semibold"> AI-Powered Lost &amp; Found Platform</span>{" "}
+              that offloads inference to Gemini and Hugging Face APIs, cutting server memory usage by 90%. 
+              I&apos;ve also developed advanced machine learning projects like a CNN-LSTM Image Caption 
+              Generator and a content-based movie recommendation engine.
             </p>
 
             <p className="text-secondary leading-[1.8] text-base">
-              Beyond code, I hold{" "}
-              <span className="text-accent font-semibold">10+ advanced AI certifications</span>{" "}
-              from institutions like Imperial College London (98%) and Vanderbilt University (100%).
-              I&apos;m passionate about Generative AI, Prompt Engineering, and building
-              intelligent applications that solve real-world problems.
+              Driven by academic excellence, I was awarded a{" "}
+              <span className="text-accent font-semibold">100% merit-based scholarship</span>{" "}
+              for my entire four-year undergraduate program. Beyond the classroom, I actively participate in 
+              hackathons and explore research in Machine Learning, Deep Learning, and NLP to build 
+              intelligent, scalable applications.
             </p>
           </motion.div>
 
