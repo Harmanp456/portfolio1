@@ -95,13 +95,13 @@ export default function Skills() {
           {categories.map(({ title, skills: skillList }, catIdx) => {
             const Icon = categoryIcons[catIdx];
             return (
-              <TiltCard key={title} maxTilt={8} scale={1.025}>
+              <TiltCard key={title} maxTilt={8} scale={1.025} className="h-full">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2 + catIdx * 0.12, ease }}
-                className="glass-card rounded-xl p-8 animated-border group"
+                className="h-full glass-card rounded-xl p-8 animated-border group flex flex-col"
               >
                 {/* Card header */}
                 <div className="flex items-center justify-between mb-6">
@@ -144,7 +144,7 @@ export default function Skills() {
                 </div>
 
                 {/* Count */}
-                <p className="mt-6 text-[10px] font-mono text-tertiary">
+                <p className="mt-auto pt-6 text-[10px] font-mono text-tertiary">
                   {skillList.length} technologies
                 </p>
               </motion.div>
