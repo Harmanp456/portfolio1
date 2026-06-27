@@ -34,7 +34,7 @@ const educationData: EducationItem[] = [
     degree: "Class XII (Senior Secondary)",
     institution: "CBSE - Central Board of Secondary Education",
     period: "Completed 2024",
-    score: "Percentage: 87.6%",
+    score: "Percentage: 81.7%",
     icon: GraduationCap,
     details: [
       "Focused on Science (Physics, Chemistry, Mathematics)",
