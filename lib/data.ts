@@ -3,6 +3,24 @@ import { certifications } from "@/lib/certifications";
 
 export const projects: Project[] = [
   {
+    title: "Orbit AI — Multi-Agent Platform",
+    description:
+      "A full-stack, AI-powered multi-agent platform integrating specialized agents for conversational assistance, document analysis, image processing, and web search. Engineered with LangChain & LangGraph orchestration, microservices architecture, and an API gateway.",
+    techStack: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "LangChain",
+      "LangGraph",
+      "LLMs",
+      "MongoDB",
+      "REST APIs",
+      "Microservices",
+    ],
+    github: "https://github.com/Harmanp456/OrbitAI",
+    featured: true,
+  },
+  {
     title: "Lost & Found AI Platform",
     description:
       "A modern, AI-powered lost and found platform that helps reunite people with their lost belongings using intelligent matching algorithms, image recognition, and real-time notifications.",
@@ -57,7 +75,7 @@ export const experience: Experience[] = [
   {
     role: "Frontend Developer Intern",
     company: "Trigunasoft (Remote)",
-    period: "July 2025 – Present",
+    period: "July 2025 – July 2026",
     description:
       "Developed 31+ components and 31 routed screens. Implemented JWT authentication securing 90%+ routes. Built multilingual support, real-time chat with SignalR, and admin dashboards. Leveraged Angular Signals across 100+ state points.",
     techStack: ["Angular", "TypeScript", "SignalR", "JWT Auth", "Angular Signals"],
@@ -67,8 +85,8 @@ export const experience: Experience[] = [
     company: "Self-Directed",
     period: "2025 – 2026",
     description:
-      "Built a full-stack AI-powered Pet Adoption Platform with RBAC, Groq AI chat, and Vet Dashboard. Developed an AI Lost & Found Platform with ML matching algorithms and JWT authentication. Shipped this portfolio with premium animations and glass-morphism design.",
-    techStack: ["Next.js", "Node.js", "MongoDB", "FastAPI", "Groq AI", "React.js"],
+      "Architected Orbit AI, an intelligent multi-agent platform orchestrated with LangChain and LangGraph microservices. Built a full-stack AI Pet Adoption Platform with RBAC and Groq AI, and an AI Lost & Found Platform with ML matching and JWT auth.",
+    techStack: ["React.js", "LangChain", "LangGraph", "Node.js", "MongoDB", "FastAPI"],
   },
   {
     role: "Programming Foundations",
@@ -100,6 +118,7 @@ export const skills = {
   core: [
     "Data Structures & Algorithms",
     "Object-Oriented Programming",
+    "Microservices & API Gateway",
     "REST API Design",
     "Role-Based Access Control",
     "JWT Authentication",
@@ -107,11 +126,11 @@ export const skills = {
     "Agile Workflow",
   ],
   tools: [
+    "React.js",
+    "Node.js (Express)",
     "Angular",
     "Next.js",
     "FastAPI",
-    "React.js",
-    "Node.js (Express)",
     "Tailwind CSS",
     "shadcn/ui",
     "Git & GitHub",
@@ -122,6 +141,8 @@ export const skills = {
     "Vercel",
   ],
   aiml: [
+    "Multi-Agent Orchestration",
+    "LangChain & LangGraph",
     "Generative AI",
     "Prompt Engineering",
     "Transformers",

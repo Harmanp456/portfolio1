@@ -14,9 +14,138 @@ function pad(n: number): string {
 }
 
 /* ── Custom Animating Project Visuals ── */
-function ProjectVisual({ index }: { index: number }) {
-  if (index === 0) {
-    // Lost & Found - Radar Matcher
+function ProjectVisual({ project, index }: { project: Project; index: number }) {
+  const titleLower = project.title.toLowerCase();
+
+  // Orbit AI - Multi-Agent Constellation & Orchestrator
+  if (titleLower.includes("orbit")) {
+    return (
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/15 via-[#0b0c10] to-[#0f1118] border border-border/40 rounded-xl overflow-hidden flex items-center justify-center">
+        {/* Subtle cyber grid backdrop */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(252,74,31,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(252,74,31,0.04)_1px,transparent_1px)] bg-[size:16px_16px]" />
+
+        {/* Ambient radial glow */}
+        <div className="absolute w-72 h-72 rounded-full bg-accent/10 blur-[60px] pointer-events-none" />
+
+        {/* HUD top bar */}
+        <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
+          <div className="flex items-center gap-1.5 px-2 py-0.5 rounded bg-accent/10 border border-accent/20 font-mono text-[9px] text-accent font-semibold tracking-wider uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+            <span>Orbit AI // Multi-Agent</span>
+          </div>
+          <div className="hidden sm:flex items-center gap-1 px-2 py-0.5 rounded bg-surface/80 border border-border/40 font-mono text-[8px] text-secondary tracking-widest uppercase">
+            <span>LangGraph Runtime</span>
+          </div>
+        </div>
+
+        {/* SVG Multi-Agent Constellation */}
+        <svg viewBox="0 0 360 220" className="w-full h-full max-h-[220px] p-2 select-none">
+          <defs>
+            <filter id="orbitGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <radialGradient id="orbitCoreGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="#ff7849" />
+              <stop offset="70%" stopColor="#fc4a1f" />
+              <stop offset="100%" stopColor="#ac0057" />
+            </radialGradient>
+          </defs>
+
+          {/* Concentric orbit tracks */}
+          <ellipse cx="180" cy="110" rx="140" ry="85" fill="none" stroke="rgba(252,74,31,0.12)" strokeWidth="1" strokeDasharray="3 4" />
+          <ellipse cx="180" cy="110" rx="95" ry="58" fill="none" stroke="rgba(252,74,31,0.18)" strokeWidth="1" strokeDasharray="4 4" />
+          <ellipse cx="180" cy="110" rx="55" ry="34" fill="none" stroke="rgba(252,74,31,0.22)" strokeWidth="1" />
+
+          {/* Connection lasers from central core (180, 110) to 4 specialized agents */}
+          <line x1="180" y1="110" x2="60" y2="55" stroke="rgba(252,74,31,0.3)" strokeWidth="1.2" strokeDasharray="3 3" />
+          <line x1="180" y1="110" x2="300" y2="55" stroke="rgba(252,74,31,0.3)" strokeWidth="1.2" strokeDasharray="3 3" />
+          <line x1="180" y1="110" x2="60" y2="165" stroke="rgba(252,74,31,0.3)" strokeWidth="1.2" strokeDasharray="3 3" />
+          <line x1="180" y1="110" x2="300" y2="165" stroke="rgba(252,74,31,0.3)" strokeWidth="1.2" strokeDasharray="3 3" />
+
+          {/* Traveling Data Pulses along orchestration paths */}
+          <circle r="2.5" fill="#ffffff" filter="url(#orbitGlow)">
+            <animateMotion dur="2.4s" repeatCount="indefinite" path="M 180 110 L 60 55" />
+          </circle>
+          <circle r="2.5" fill="#ffb088" filter="url(#orbitGlow)">
+            <animateMotion dur="2.8s" repeatCount="indefinite" path="M 180 110 L 300 55" />
+          </circle>
+          <circle r="2.5" fill="#ffffff" filter="url(#orbitGlow)">
+            <animateMotion dur="3.2s" repeatCount="indefinite" path="M 180 110 L 60 165" />
+          </circle>
+          <circle r="2.5" fill="#ffb088" filter="url(#orbitGlow)">
+            <animateMotion dur="2.6s" repeatCount="indefinite" path="M 180 110 L 300 165" />
+          </circle>
+
+          {/* Core Hub Shockwave Ring */}
+          <circle cx="180" cy="110" r="28" fill="none" stroke="rgba(252,74,31,0.25)" strokeWidth="1">
+            <animate attributeName="r" values="22;38;22" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0.1;0.8" dur="3s" repeatCount="indefinite" />
+          </circle>
+
+          {/* Central Orchestrator Core */}
+          <circle cx="180" cy="110" r="18" fill="url(#orbitCoreGrad)" filter="url(#orbitGlow)" className="animate-pulse" />
+          <circle cx="180" cy="110" r="8" fill="#ffffff" opacity="0.9" />
+          <text x="180" y="138" textAnchor="middle" fill="#ff9975" fontSize="8" fontFamily="monospace" fontWeight="bold" letterSpacing="1">
+            ORCHESTRATOR
+          </text>
+
+          {/* Agent 1: Conversational AI (60, 55) */}
+          <g>
+            <circle cx="60" cy="55" r="14" fill="#161822" stroke="#fc4a1f" strokeWidth="1.5" />
+            <circle cx="60" cy="55" r="5" fill="#fc4a1f" />
+            <rect x="22" y="74" width="76" height="15" rx="3" fill="#12141ddd" stroke="rgba(252,74,31,0.3)" strokeWidth="0.8" />
+            <text x="60" y="85" textAnchor="middle" fill="#f0f0f5" fontSize="7.5" fontFamily="monospace" fontWeight="bold">
+              CHAT AGENT
+            </text>
+          </g>
+
+          {/* Agent 2: Document Understanding (300, 55) */}
+          <g>
+            <circle cx="300" cy="55" r="14" fill="#161822" stroke="#fc4a1f" strokeWidth="1.5" />
+            <circle cx="300" cy="55" r="5" fill="#fc4a1f" />
+            <rect x="262" y="74" width="76" height="15" rx="3" fill="#12141ddd" stroke="rgba(252,74,31,0.3)" strokeWidth="0.8" />
+            <text x="300" y="85" textAnchor="middle" fill="#f0f0f5" fontSize="7.5" fontFamily="monospace" fontWeight="bold">
+              DOC ANALYZER
+            </text>
+          </g>
+
+          {/* Agent 3: Vision / Image (60, 165) */}
+          <g>
+            <circle cx="60" cy="165" r="14" fill="#161822" stroke="#ac0057" strokeWidth="1.5" />
+            <circle cx="60" cy="165" r="5" fill="#ac0057" />
+            <rect x="22" y="184" width="76" height="15" rx="3" fill="#12141ddd" stroke="rgba(172,0,87,0.4)" strokeWidth="0.8" />
+            <text x="60" y="195" textAnchor="middle" fill="#f0f0f5" fontSize="7.5" fontFamily="monospace" fontWeight="bold">
+              VISION AGENT
+            </text>
+          </g>
+
+          {/* Agent 4: Web Search (300, 165) */}
+          <g>
+            <circle cx="300" cy="165" r="14" fill="#161822" stroke="#ac0057" strokeWidth="1.5" />
+            <circle cx="300" cy="165" r="5" fill="#ac0057" />
+            <rect x="262" y="184" width="76" height="15" rx="3" fill="#12141ddd" stroke="rgba(172,0,87,0.4)" strokeWidth="0.8" />
+            <text x="300" y="195" textAnchor="middle" fill="#f0f0f5" fontSize="7.5" fontFamily="monospace" fontWeight="bold">
+              WEB SEARCH
+            </text>
+          </g>
+        </svg>
+
+        {/* HUD bottom bar */}
+        <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[8px] font-mono text-tertiary select-none border-t border-border/30 pt-1.5">
+          <span className="text-accent/80">API Gateway: 200 OK</span>
+          <span>Microservices: 4/4 Connected</span>
+          <span className="hidden sm:inline text-secondary">Router: LangGraph</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Lost & Found - Radar Matcher
+  if (titleLower.includes("lost") || index === 1) {
     return (
       <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface to-surface border border-border/30 rounded-xl overflow-hidden flex items-center justify-center">
         <div className="relative w-48 h-48 border border-accent/15 rounded-full flex items-center justify-center">
@@ -57,8 +186,8 @@ function ProjectVisual({ index }: { index: number }) {
     );
   }
 
-  if (index === 1) {
-    // Pet Adoption - AI Node Paw
+  // Pet Adoption - AI Node Paw
+  if (titleLower.includes("pet") || index === 2) {
     return (
       <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface to-surface border border-border/30 rounded-xl overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(252,74,31,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(252,74,31,0.03)_1px,transparent_1px)] bg-[size:16px_16px]" />
@@ -118,7 +247,7 @@ function ProjectVisual({ index }: { index: number }) {
     );
   }
 
-  // Portfolio site viewport mock
+  // Fallback: Portfolio site viewport mock
   return (
     <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-surface to-surface border border-border/30 rounded-xl overflow-hidden p-6 flex flex-col gap-4">
       <div className="flex items-center justify-between border-b border-border/50 pb-2">
@@ -127,7 +256,7 @@ function ProjectVisual({ index }: { index: number }) {
           <span className="w-2 h-2 rounded-full bg-yellow-500/50" />
           <span className="w-2 h-2 rounded-full bg-green-500/50" />
         </div>
-        <span className="text-[8px] font-mono text-tertiary select-none">portfolio_layout.tsx</span>
+        <span className="text-[8px] font-mono text-tertiary select-none">project_preview.tsx</span>
       </div>
 
       <div className="flex-1 grid grid-cols-3 gap-3">
@@ -228,9 +357,9 @@ function FeaturedCard({ project, index }: { project: Project; index: number }) {
         transition={{ duration: 0.45, ease }}
         style={{ transformStyle: "preserve-3d" }}
       >
-        <ProjectVisual index={index} />
+        <ProjectVisual project={project} index={index} />
         {/* Hover glow */}
-        <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-accent/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-accent/10 via-transparent to-transparent pointer-events-none" />
       </motion.div>
 
       {/* Project info */}

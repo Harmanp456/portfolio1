@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const ticker =
-  "Python · Angular · FastAPI · Next.js · Groq AI · TypeScript · React.js · Supabase · MongoDB · Generative AI · Prompt Engineering · JWT · RBAC · REST APIs · Deep Learning · Chandigarh University · Trigunasoft · ";
+  "Python · Angular · FastAPI · Next.js · LangChain · LangGraph · Multi-Agent AI · Groq AI · TypeScript · React.js · Supabase · MongoDB · Generative AI · Prompt Engineering · JWT · RBAC · REST APIs · Deep Learning · Chandigarh University · Trigunasoft · ";
 
 function AnimatedCounter({
   value,
@@ -150,7 +150,9 @@ export default function About() {
             </p>
 
             <p className="text-secondary leading-[1.8] text-base">
-              I love building full-stack AI platforms end-to-end. Recently, I shipped an 
+              I love building full-stack AI platforms end-to-end. Recently, I architected{" "}
+              <span className="text-accent font-semibold">Orbit AI</span>, an intelligent multi-agent
+              platform orchestrated with LangChain and LangGraph microservices, and shipped an{" "}
               <span className="text-accent font-semibold"> AI-Powered Lost &amp; Found Platform</span>{" "}
               that offloads inference to Gemini and Hugging Face APIs, cutting server memory usage by 90%. 
               I&apos;ve also developed advanced machine learning projects like a CNN-LSTM Image Caption 
