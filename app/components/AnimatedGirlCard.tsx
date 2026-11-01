@@ -335,7 +335,7 @@ export default function AnimatedGirlCard() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-sm font-bold text-primary leading-tight">Harmanpreet Kaur</p>
-              <p className="text-[11px] font-mono text-accent mt-0.5">Software Intern @ Trigunasoft</p>
+              <p className="text-[11px] font-mono text-accent mt-0.5">Ex-Intern @ Trigunasoft</p>
             </div>
             <div className="flex flex-col items-end gap-1.5">
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-400/10 border border-green-400/20 rounded-full">

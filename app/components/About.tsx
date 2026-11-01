@@ -142,9 +142,9 @@ export default function About() {
             <p className="text-secondary leading-[1.8] text-base">
               I&apos;m a B.E. CSE (AI &amp; ML) student at Chandigarh University, Mohali,
               maintaining an <span className="text-accent font-semibold">8.35 CGPA</span>.
-              Currently working as a{" "}
+              Previously worked as a{" "}
               <span className="text-accent font-semibold">Frontend Developer Intern at Trigunasoft</span>,
-              where I&apos;ve developed over 31 routed screens and components. My work focuses on 
+              where I developed over 31 routed screens and components. My work focused on 
               leveraging Angular Signals for state management, implementing secure JWT authentication, 
               and building real-time features using SignalR.
             </p>

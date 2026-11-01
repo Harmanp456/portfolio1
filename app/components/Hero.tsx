@@ -185,7 +185,7 @@ export default function Hero() {
                   <div className="h-6 w-[3px] bg-gradient-to-b from-accent to-accent-hot rounded-full" />
                   <div className="text-sm md:text-base lg:text-lg font-mono overflow-hidden">
                     <TextScramble
-                      text="AI/ML Developer · Full-Stack Developer · Intern @ Trigunasoft"
+                      text="AI/ML Developer · Full-Stack Developer · Ex-Intern @ Trigunasoft"
                       className="text-accent"
                       delay={1600}
                       speed={25}
@@ -209,7 +209,7 @@ export default function Hero() {
                 >
                   B.E. CSE (AI &amp; ML) student at Chandigarh University with{" "}
                   <span className="text-accent font-semibold">8.35 CGPA</span>.
-                  Currently interning at Trigunasoft, building AI-driven enterprise
+                  Ex-intern at Trigunasoft, building AI-driven enterprise
                   products with Angular, FastAPI &amp; Next.js — passionate about
                   intelligent, scalable applications.
                 </motion.p>
